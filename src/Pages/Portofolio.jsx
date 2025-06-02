@@ -13,6 +13,7 @@ import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
+import SEO from '../components/SEO';
 
 // Separate ShowMore/ShowLess button component
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -114,6 +115,33 @@ const techStacks = [
 const initialItems = 3;
 
 const projectDetails = {
+  "monarch-private-charters": {
+    title: "Monarch Private Charters",
+    description: "Experience the epitome of luxury air travel with Monarch Private Charters. A premium private charter broker delivering unparalleled service and sophistication in private aviation.",
+    image: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//monarch.png",
+    demo: "https://www.monarchprivatecharters.com/",
+    github: "https://github.com/wenslauce",
+    technologies: ["Next.js 14.1.0", "React", "Tailwind CSS", "shadcn/ui", "Radix UI", "Framer Motion", "Lucide", "Vercel"],
+    features: [
+      "Modern Next.js 14.1.0 Architecture",
+      "Luxury Aviation Services Platform",
+      "Private Jet Booking System",
+      "Fleet Management Interface",
+      "Destination Planning Tools",
+      "Group Charter Solutions",
+      "Framer Motion Animations",
+      "shadcn/ui Component Library",
+      "HSTS Security Implementation",
+      "Open Graph Optimization",
+      "Priority Hints Performance",
+      "Responsive Premium Design"
+    ],
+    longDescription: `Monarch Private Charters represents the pinnacle of luxury air travel, built with cutting-edge Next.js 14.1.0 technology. This premium private charter broker platform connects discerning clients with world-class aviation services through a sophisticated, modern web application.
+
+    The platform leverages React with Next.js for server-side rendering and optimal performance, while utilizing Tailwind CSS and shadcn/ui for a sleek, responsive design. Framer Motion provides smooth animations that enhance the luxury experience, and Radix UI ensures accessibility standards. The application includes advanced features like HSTS security, Open Graph optimization for social sharing, and Priority Hints for performance optimization.
+    
+    As a licensed broker, Monarch Private Charters operates by partnering with FAA-licensed, DOT-authorized, and internationally certified air carriers. The website offers comprehensive solutions including private jets, business jets, helicopter charter, and air ambulance services, all presented through an elegant interface that reflects the sophistication and exclusivity of private aviation.`
+  },
   "mukono-energies": {
     title: "Mukono Energies | Clean Energy",
     description: "Founded in 2024, Mukono Energies Uganda ltd converts Used Cooking Oil (UCO) into clean, renewable biodiesel.",
@@ -242,19 +270,34 @@ const projectDetails = {
 
 const Certifications = [
   {
-    id: "cert-Journalism-2023",
-    Title: "English For Journalism",
-    Img: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Journlism2023.png"
+    id: "cert-journalism-2023",
+    title: "English for Journalism",
+    institution: "University of Pennsylvania",
+    description: "Comprehensive journalism training focusing on English language proficiency, writing techniques, and media ethics for modern journalism practices.",
+    image: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Journlism2023.png",
+    year: "2023",
+    skills: ["Journalism Writing", "Media Ethics", "English Proficiency", "Editorial Standards"],
+    credentialUrl: "https://www.coursera.org/account/accomplishments/certificate/3JEVAZUU5HD8"
   },
   {
     id: "cert-afp-2024",
-    Title: "AFP Certificate",
-    Img: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//AFP.jpg"
+    title: "Learn methods for dealing with online harassment and for staying safe online",
+    institution: "Agence France-Presse",
+    description: "Professional training on digital safety, online harassment prevention, and protective measures for media professionals in the digital age.",
+    image: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//AFP.jpg",
+    year: "2023",
+    skills: ["Digital Safety", "Online Security", "Harassment Prevention", "Media Protection"],
+    credentialUrl: "https://digitalcourses.afp.com/certificates/45t3mb7zsa"
   },
   {
-    id: "cert-media-governance-2024",
-    Title: "Media Governance Certificate",
-    Img: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//media-amstra.png"
+    id: "cert-media-ethics-2024",
+    title: "Media Ethics and Governance",
+    institution: "University of Amsterdam",
+    description: "Advanced course covering media ethics, governance frameworks, and responsible journalism practices in the digital era.",
+    image: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//media-amstra.png",
+    year: "2025",
+    skills: ["Data Ethics", "Advertising", "Business Ethics", "Media and Communications", "Research", "Journalism", "Governance", "Ethical Standards And Conduct"],
+    credentialUrl: "https://coursera.org/verify/G7H7A5JOU2YW"
   }
 ];
 
@@ -269,107 +312,62 @@ export default function Portofolio() {
 
   const defaultProjects = [
     {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e124",
+      id: "monarch-private-charters",
+      title: "Monarch Private Charters",
+      description: "Experience the epitome of luxury air travel with Monarch Private Charters. A premium private charter broker delivering unparalleled service and sophistication in private aviation, offering private jets, business jets, helicopter charter, and air ambulance services.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//monarch.png",
+      demo_url: "https://www.monarchprivatecharters.com/",
+      github_url: "https://github.com/wenslauce",
+      technologies: ["Next.js 14.1.0", "React", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Vercel"],
+      Features: [
+        "Luxury Aviation Services Platform",
+        "Private Jet Booking System",
+        "Fleet Management Interface",
+        "Destination Planning Tools",
+        "Group Charter Solutions",
+        "Responsive Premium Design",
+        "SEO-Optimized Structure",
+        "Performance Optimization"
+      ]
+    },
+    {
+      id: "w-giertsen-energy-solutions",
+      title: "W. Giertsen Energy Solutions",
+      description: "This is a custom application built exclusively for W. Giertsen Energy, designed to provide a seamless and optimized digital experience. Built with Next.js 15.2.4 and modern React architecture, featuring advanced performance optimizations and cutting-edge UI components.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Energy-Solutions.png",
+      demo_url: "https://giertsenenergy.com/",
+      github_url: null,
+      technologies: ["Next.js 15.2.4", "React", "Tailwind CSS", "shadcn/ui", "Framer Motion", "Vercel"],
+      Features: [
+        "Next.js 15.2.4 Architecture",
+        "React Component Library",
+        "shadcn/ui Components",
+        "Framer Motion Animations",
+        "Tailwind CSS Styling",
+        "Vercel Deployment",
+        "Performance Optimization"
+      ]
+    },
+    {
+      id: "mukono-energies",
       title: "Mukono Energies | Clean Energy",
       description: "Founded in 2024, Mukono Energies Uganda ltd converts Used Cooking Oil (UCO) into clean, renewable biodiesel.",
       image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Mukono%20Energies.png",
       demo_url: "https://mukonoenergies.com/",
       github_url: "https://github.com/wenslauce",
-      technologies: ["Wordpress"],
+      technologies: ["WordPress 6.8.1", "PHP", "MySQL", "Elementor", "RankMath SEO", "LiteSpeed"],
       Features: [
         "Custom WordPress Theme Development",
+        "Elementor Page Builder Integration",
+        "RankMath SEO Optimization",
+        "LiteSpeed Server Performance",
+        "HTTP/3 Protocol Support",
         "Responsive Design",
-        "Performance Optimization",
-        "SEO-Friendly Structure",
         "Modern UI/UX Design"
       ]
     },
     {
-      id: "6f943e2b-3a54-42c5-aea8-3f4b7c51e456",
-      title: "X-Stream 1.0 | Entertainment",
-      description: "X-Stream Entertainment is the ultimate destination for film and TV show lovers seeking an immersive, dynamic, and diverse streaming experience. Whether you're a fan of timeless classics, the latest blockbusters, niche indie films, or binge-worthy series, X-Stream Entertainment offers a comprehensive collection that caters to every taste and genre. With a user-friendly interface, X-Stream Entertainment makes discovering new content simple and enjoyable. Our platform is home to thousands of movies, TV series, documentaries, and exclusive content from all around the world, delivered in stunning high-definition quality.",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//X-Stream.png",
-      demo_url: "https://x-streament.vercel.app/home",
-      github_url: "https://github.com/wenslauce/X-Stream",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind",
-        "Vercel",
-        "TMDb",
-        "Vidsrc.to"
-      ],
-      Features: [
-        "Browse Movies: Explore a vast collection of movies sorted by genre, release date, or popularity",
-        "Search Functionality: Easily find movies by title, director, or cast",
-        "Recommendation Engine: Get personalized movie recommendations based on your preferences and viewing history",
-        "Responsive Design: Enjoy a seamless experience across devices with our responsive web design"
-      ]
-    },
-    {
-      id: "7b832e5d-3a54-42c5-aea8-3f4b7c51e789",
-      title: "Identity Radio | Identity Newsroom",
-      description: "This is a custom web app for Identity Radio, able to show station metadata, music metadata and use deezer api to show cover art of the current playing music",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Identity-Radio.png",
-      demo_url: "https://radio.wenslauce.com/",
-      github_url: "https://github.com/wenslauce/Identity-Radio",
-      technologies: [
-        "Vite",
-        "TypeScript",
-        "React",
-        "shadcn-ui",
-        "Tailwind CSS"
-      ],
-      Features: [
-        "Listen Music",
-        "Users Chatbox", 
-        "Song Request Section"
-      ]
-    },
-    {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e123",
-      title: "KenyaLaw AI",
-      description: "KenyaLaw AI is an interactive platform that helps users understand and explore Kenya's Constitution using artificial intelligence. The application provides easy access to constitutional information, smart search capabilities, and AI-powered assistance for constitutional queries.",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//KenyaLawAI.png",
-      demo_url: "https://kenya.wenslauce.com/",
-      github_url: "https://github.com/wenslauce/Kenya-Law-Ai",
-      technologies: [
-        "React 18",
-        "TypeScript",
-        "Vite",
-        "TailwindCSS",
-        "shadcn/ui",
-        "Gemini AI API",
-        "React Router",
-        "React Query"
-      ],
-      Features: [
-        "Constitution Explorer: Browse through chapters of Kenya's Constitution with detailed explanations",
-        "Smart Search: Search specific articles and interpretations with AI-powered results",
-        "AI Assistant: Get instant, context-aware answers to your constitutional questions", 
-        "Responsive Design: Fully responsive interface that works on all devices",
-        "PWA Support: Install as a Progressive Web App for offline access"
-      ]
-    },
-    {
-      id: "8c110f4f-3a54-42c5-aea8-3f4b7c51e359",
-      title: "W. Giertsen Energy Solutions",
-      description: "This is a custom theme built exclusively for W. Giertsen Energy, designed to provide a seamless and optimized digital experience. Tailored to meet the company's specific needs, it ensures reliability, performance, and ease of use while maintaining a professional and modern design.",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Energy-Solutions.png",
-      demo_url: "https://giertsenenergy.com/",
-      github_url: null,
-      technologies: ["Wordpress", "GSAP"],
-      Features: [
-        "Custom WordPress Theme Development",
-        "Responsive Design",
-        "GSAP Animations",
-        "Performance Optimization",
-        "SEO-Friendly Structure",
-        "Modern UI/UX Design"
-      ]
-    },
-    {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e125",
+      id: "ronami-international",
       title: "Ronami International",
       description: "Ronami International, also known as Ronami Holdings Ltd, is a consultancy and supply of goods and services company that was established in 2013. The company operates with a focus on collaborating closely with international private companies and organizations.",
       image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Ronami.png",
@@ -385,41 +383,32 @@ export default function Portofolio() {
       ]
     },
     {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e126",
-      title: "Ronami Online",
-      description: "Ronami Online is a Ronami International ultimate team collaboration tool, keeping all your team's tasks in one place. With real-time collaboration capabilities, you can work together seamlessly to achieve real results.",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Ronami%20Online.png",
-      demo_url: "https://ronami.online/",
+      id: "x-stream-entertainment",
+      title: "X-Stream 1.0 | Entertainment",
+      description: "X-Stream Entertainment is the ultimate destination for film and TV show lovers seeking an immersive, dynamic, and diverse streaming experience. Built with Next.js 14.1.0 and modern React architecture, featuring shadcn/ui components, advanced security with HSTS, and optimized performance through Priority Hints for an exceptional streaming experience.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//X-Stream.png",
+      demo_url: "https://x-streament.vercel.app/home",
       github_url: "https://github.com/wenslauce",
-      technologies: ["Laravel"],
+      technologies: [
+        "Next.js 14.1.0",
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Radix UI",
+        "Vercel"
+      ],
       Features: [
-        "Manage customers and leads",
-        "Track client projects, invoices, and proposals/estimates",
-        "Add company employees, track attendance and manage leaves",
-        "Create contracts with clients with e-signatures",
-        "Create projects, add project members, and track progress",
-        "Use a Kanban taskboard to visualize work and tasks",
-        "Use a project gantt chart to plan the project schedule"
+        "Next.js 14.1.0 Architecture",
+        "React Server Components",
+        "shadcn/ui Component Library",
+        "HSTS Security Implementation",
+        "Priority Hints Performance",
+        "Movie & TV Show Streaming",
+        "Advanced Search & Recommendations"
       ]
     },
     {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e127",
-      title: "Othalo AS",
-      description: "OTHALO™ has developed a patent technology to manufacture building systems using recycled plastic waste. The main market is the developing world where there is a massive need of affordable houses, refugee shelters, temperature controlled units for storage of food and medicines, camps for disasters and emergency situations.",
-      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Othalo.png",
-      demo_url: "https://othalo.com/",
-      github_url: "https://github.com/wenslauce",
-      technologies: ["Wordpress"],
-      Features: [
-        "Custom WordPress Theme Development",
-        "Responsive Design",
-        "Performance Optimization",
-        "SEO-Friendly Structure",
-        "Modern UI/UX Design"
-      ]
-    },
-    {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e128",
+      id: "afri-rise-equity",
       title: "Afri-Rise Equity Limited",
       description: "Afri-Rise is a Fund Management Consultancy firm formed to assist businesses in getting affordable financing for Private Sector African Projects that have a communal social impact. Afri-Rise has a combined management experience of over three decades, specializing in Business",
       image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Afri-Rise.png",
@@ -436,7 +425,61 @@ export default function Portofolio() {
       ]
     },
     {
-      id: "9d721f4e-3a54-42c5-aea8-3f4b7c51e129",
+      id: "othalo-as",
+      title: "Othalo AS",
+      description: "OTHALO™ has developed a patent technology to manufacture building systems using recycled plastic waste. The main market is the developing world where there is a massive need of affordable houses, refugee shelters, temperature controlled units for storage of food and medicines, camps for disasters and emergency situations.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Othalo.png",
+      demo_url: "https://othalo.com/",
+      github_url: "https://github.com/wenslauce",
+      technologies: ["Wordpress"],
+      Features: [
+        "Custom WordPress Theme Development",
+        "Responsive Design",
+        "Performance Optimization",
+        "SEO-Friendly Structure",
+        "Modern UI/UX Design"
+      ]
+    },
+    {
+      id: "ronami-online",
+      title: "Ronami Online",
+      description: "Ronami Online is a comprehensive team collaboration platform built with Laravel and modern web technologies. Features real-time communication via Pusher, PWA capabilities, rich text editing with Quill, and advanced UI components powered by Bootstrap and jQuery for seamless project management.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Ronami%20Online.png",
+      demo_url: "https://ronami.online/",
+      github_url: "https://github.com/wenslauce",
+      technologies: ["Laravel", "PHP", "Bootstrap 4.3.1", "jQuery 3.4.1", "Pusher", "PWA"],
+      Features: [
+        "Laravel Full-Stack Framework",
+        "Real-time Chat with Pusher",
+        "Progressive Web App (PWA)",
+        "Rich Text Editor with Quill",
+        "Project Management Dashboard",
+        "Kanban Taskboard Visualization",
+        "Gantt Chart Scheduling"
+      ]
+    },
+    {
+      id: "identity-radio",
+      title: "Identity Radio | Identity Newsroom",
+      description: "This is a custom web app for Identity Radio, able to show station metadata, music metadata and use deezer api to show cover art of the current playing music",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Identity-Radio.png",
+      demo_url: "https://radio.wenslauce.com/",
+      github_url: "https://github.com/wenslauce",
+      technologies: [
+        "Vite",
+        "TypeScript",
+        "React",
+        "shadcn-ui",
+        "Tailwind CSS"
+      ],
+      Features: [
+        "Listen Music",
+        "Users Chatbox", 
+        "Song Request Section"
+      ]
+    },
+    {
+      id: "hon-peter-wandera-foundation",
       title: "Hon. Peter Wandera Foundation",
       description: "The Hon. Peter Wandera Foundation was founded with a clear mission: to uplift and empower communities through meaningful, impactful change. Established by Hon. Peter Wandera, a former law enforcement officer turned philanthropist, the foundation is rooted in a deep sense of responsibility to serve and improve the lives of those in need.",
       image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//Hon-Peter.png",
@@ -450,6 +493,31 @@ export default function Portofolio() {
         "SEO-Friendly Structure",
         "Modern UI/UX Design",
         "Donation System"
+      ]
+    },
+    {
+      id: "kenya-law-ai",
+      title: "KenyaLaw AI",
+      description: "KenyaLaw AI is an interactive platform that helps users understand and explore Kenya's Constitution using artificial intelligence. The application provides easy access to constitutional information, smart search capabilities, and AI-powered assistance for constitutional queries.",
+      image_url: "https://zkayfzujzxogoaiafixg.supabase.co/storage/v1/object/public/projects//KenyaLawAI.png",
+      demo_url: "https://kenya.wenslauce.com/",
+      github_url: "https://github.com/wenslauce",
+      technologies: [
+        "React 18",
+        "TypeScript",
+        "Vite",
+        "TailwindCSS",
+        "shadcn/ui",
+        "Gemini AI API",
+        "React Router",
+        "React Query"
+      ],
+      Features: [
+        "Constitution Explorer: Browse through chapters of Kenya's Constitution with detailed explanations",
+        "Smart Search: Search specific articles and interpretations with AI-powered results",
+        "AI Assistant: Get instant, context-aware answers to your constitutional questions", 
+        "Responsive Design: Fully responsive interface that works on all devices",
+        "PWA Support: Install as a Progressive Web App for offline access"
       ]
     }
   ];
@@ -499,7 +567,14 @@ export default function Portofolio() {
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, 3);
 
   return (
-    <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
+    <>
+      <SEO 
+        title="Portfolio | Wenslauce Chengo - Projects, Certificates & Tech Stack"
+        description="Explore Wenslauce Chengo's portfolio showcasing innovative web development projects, professional certifications, and technical expertise across React, Next.js, WordPress, and modern web technologies."
+        url="https://wenslauce.com/#Portofolio"
+        keywords="Wenslauce Portfolio, Web Development Projects, React Projects, Next.js Applications, WordPress Sites, Professional Certificates, Tech Stack, Media Projects"
+      />
+      <div className="md:px-[10%] px-[5%] w-full sm:mt-0 mt-[3rem] bg-[#030014] overflow-hidden" id="Portofolio">
       <div className="text-center pb-10" data-aos="fade-up" data-aos-duration="1000">
         <h2 className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
           <span style={{
@@ -649,7 +724,10 @@ export default function Portofolio() {
                         data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                         data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                       >
-                        <Certificate ImgSertif={certificate.Img} />
+                        <Certificate 
+                          certificate={certificate}
+                          ImgSertif={certificate.image} 
+                        />
                       </div>
                     ))}
                   </div>
@@ -684,5 +762,6 @@ export default function Portofolio() {
         </div>
       </Box>
     </div>
+    </>
   );
 }

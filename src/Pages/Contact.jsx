@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { supabase } from "../lib/supabase";
+import SEO from '../components/SEO';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -139,6 +140,12 @@ const ContactPage = () => {
 
   return (
     <>
+      <SEO 
+        title="Contact Wenslauce Chengo | Get in Touch"
+        description="Ready to collaborate? Contact Wenslauce Chengo for media strategy, web development projects, brand consulting, and digital innovation opportunities. Let's discuss your next project."
+        url="https://wenslauce.com/#Contact"
+        keywords="Contact Wenslauce Chengo, Media Consultation, Web Development Services, Brand Strategy, Project Collaboration, Business Inquiries, Digital Services"
+      />
       <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">
         <h2
           data-aos="fade-down"

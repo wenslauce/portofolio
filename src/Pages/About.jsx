@@ -2,6 +2,7 @@ import React, { useEffect, memo, useMemo } from "react"
 import { FileText, Code, Award, Globe, ArrowUpRight, Sparkles, UserCheck } from "lucide-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import SEO from '../components/SEO'
 
 // Memoized Components
 const Header = memo(() => (
@@ -51,9 +52,14 @@ const ProfileImage = memo(() => (
           
           <img
             src="/Photo.png"
-            alt="Profile"
+            alt="Wenslauce Chengo - Media Strategist and Communications Professional | Professional headshot of Wenslauce Chengo, an experienced media and communications expert specializing in digital strategy, web development, and brand management"
+            title="Wenslauce Chengo | Media Strategist & Web Developer"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
+            fetchpriority="high"
+            itemProp="image"
+            role="img"
+            aria-label="Professional profile photo of Wenslauce Chengo"
           />
 
           {/* Advanced hover effects - desktop only */}
@@ -183,10 +189,67 @@ const AboutPage = () => {
   ], [totalProjects, totalCertificates, YearExperience]);
 
   return (
-    <div
-      className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0" 
-      id="About"
-    >
+    <>
+      <SEO 
+        title="About Wenslauce Chengo | Media Strategist & Communications Expert"
+        description="Learn about Wenslauce Chengo, a dynamic media and communications professional with over 4 years of experience in strategic initiatives, brand management, web development, and digital innovation."
+        url="https://wenslauce.com/#About"
+        keywords="About Wenslauce Chengo, Media Professional, Communications Expert, Brand Strategist, Team Leadership, Digital Innovation, Web Developer, Journalism"
+        image="https://wenslauce.com/Photo.png"
+      />
+      
+      {/* Structured Data for Person and Profile */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Wenslauce Chengo",
+          "alternateName": "Wenslauce",
+          "description": "Dynamic and results-driven media and communications professional with over 4 years of experience leading strategic initiatives across digital, traditional, and tech platforms.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://wenslauce.com/Photo.png",
+            "width": "400",
+            "height": "400",
+            "caption": "Professional headshot of Wenslauce Chengo",
+            "description": "Wenslauce Chengo - Media Strategist and Communications Professional"
+          },
+          "url": "https://wenslauce.com",
+          "sameAs": [
+            "https://linkedin.com/in/wenslauce",
+            "https://github.com/wenslauce",
+            "https://instagram.com/wenslauce"
+          ],
+          "jobTitle": "Media Strategist & Web Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance Media Strategist"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Global"
+          },
+          "knowsAbout": [
+            "Media Strategy",
+            "Web Development",
+            "Digital Marketing",
+            "Brand Strategy",
+            "Content Strategy",
+            "Social Media Management",
+            "React Development",
+            "WordPress Development"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Media Strategist",
+            "description": "Specializing in digital strategy, web development, and brand management"
+          }
+        })}
+      </script>
+      <div
+        className="h-auto pb-[10%] text-white overflow-hidden px-[5%] sm:px-[5%] lg:px-[10%] mt-10 sm-mt-0" 
+        id="About"
+      >
       <Header />
 
       <div className="w-full mx-auto pt-8 sm:pt-12 relative">
@@ -214,21 +277,17 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              A results-driven professional with four years of experience in
-              media, communications, public relations, and web development. 
-              Skilled in developing and executing brand-enhancing strategies,
-              managing social media platforms, directing content across digital and 
-              traditional outlets, and leading PR initiatives.
+              Dynamic and results-driven media and communications professional with over 4 years of experience leading strategic initiatives across digital, traditional, and tech platforms. Adept at elevating brand visibility through impactful PR, data-driven content strategies, and cross-channel marketing. Proven leadership in managing multidisciplinary teams, launching scalable tech solutions, and aligning IT and media strategies with business goals. Versatile expertise in media relations, web development, social media management, and market analysis, with a strong foundation in journalism and digital innovation.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/file/d/1WmMGwo983yWnyHTM99oIaIxITUWoswb2/view" className="w-full lg:w-auto">
+              <a href="https://drive.google.com/file/d/1K0tZL8jtXplEnYiBRqO-uNVrWoR9folX/view?usp=sharing" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
                 data-aos-duration="800"
                 className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
               >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download Resume
               </button>
               </a>
               <a href="#Portofolio" className="w-full lg:w-auto">
@@ -274,6 +333,7 @@ const AboutPage = () => {
         }
       `}</style>
     </div>
+    </>
   );
 };
 

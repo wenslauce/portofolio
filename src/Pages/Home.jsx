@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucid
 import Lottie from "lottie-react"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import SEO from '../components/SEO'
 
 // Memoized Components
 const StatusBadge = memo(() => (
@@ -142,7 +143,14 @@ const Home = () => {
   }, [handleTyping]);
 
   return (
-    <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
+    <>
+      <SEO 
+        title="Wenslauce Chengo | Media Strategist & Web Developer"
+        description="Dynamic and results-driven media and communications professional with over 4 years of experience leading strategic initiatives across digital, traditional, and tech platforms. Expert in web development, brand strategy, and digital innovation."
+        url="https://wenslauce.com/"
+        keywords="Wenslauce Chengo, Media Strategist, Web Developer, Digital Marketing, Brand Strategy, Content Strategy, React Developer, Portfolio, Freelancer"
+      />
+      <div className="min-h-screen bg-[#030014] overflow-hidden" id="Home">
       <div className={`relative z-10 transition-all duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center min-h-screen py-12 sm:py-0">
@@ -226,6 +234,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

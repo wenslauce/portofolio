@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { Modal, IconButton, Box, Fade, Backdrop, Zoom, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 import CloseIcon from "@mui/icons-material/Close"
 import FullscreenIcon from "@mui/icons-material/Fullscreen"
+import VisibilityIcon from "@mui/icons-material/Visibility"
 
-const Certificate = ({ ImgSertif }) => {
+const Certificate = ({ ImgSertif, certificate }) => {
 	const [open, setOpen] = useState(false)
 
 	const handleOpen = () => {
@@ -55,20 +57,20 @@ const Certificate = ({ ImgSertif }) => {
 							zIndex: 1,
 						},
 					}}>
-					<img
-						className="certificate-image"
-						src={ImgSertif}
-						alt="Certificate"
-						style={{
-							width: "100%",
-							height: "auto",
-							display: "block",
-							objectFit: "cover",
-							filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
-							transition: "filter 0.3s ease",
-						}}
-						onClick={handleOpen}
-					/>
+									<img
+					className="certificate-image"
+					src={ImgSertif}
+					alt={certificate ? `${certificate.title} - ${certificate.institution}` : "Certificate"}
+					style={{
+						width: "100%",
+						height: "auto",
+						display: "block",
+						objectFit: "cover",
+						filter: "contrast(1.10) brightness(0.9) saturate(1.1)",
+						transition: "filter 0.3s ease",
+					}}
+					onClick={handleOpen}
+				/>
 				</Box>
 
 				{/* Hover Overlay */}
@@ -100,20 +102,45 @@ const Certificate = ({ ImgSertif }) => {
 							width: "100%",
 							color: "white",
 						}}>
-						<FullscreenIcon
-							sx={{
-								fontSize: 40,
-								mb: 1,
-								filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
-							}}
-						/>
+						<Box sx={{ display: "flex", justifyContent: "center", gap: 2, mb: 2 }}>
+							<FullscreenIcon
+								sx={{
+									fontSize: 30,
+									filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+									cursor: "pointer",
+								}}
+								onClick={(e) => {
+									e.stopPropagation();
+									handleOpen();
+								}}
+							/>
+							{certificate && (
+								<Link 
+									to={`/certificate/${certificate.id}`}
+									onClick={(e) => e.stopPropagation()}
+								>
+									<VisibilityIcon
+										sx={{
+											fontSize: 30,
+											filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.2))",
+											color: "white",
+											cursor: "pointer",
+											"&:hover": {
+												transform: "scale(1.1)",
+											}
+										}}
+									/>
+								</Link>
+							)}
+						</Box>
 						<Typography
-							variant="h6"
+							variant="body1"
 							sx={{
 								fontWeight: 600,
 								textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+								fontSize: "0.9rem"
 							}}>
-							View Certificate
+							{certificate ? "View Details" : "View Certificate"}
 						</Typography>
 					</Box>
 				</Box>
