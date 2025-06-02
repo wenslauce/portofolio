@@ -1,5 +1,4 @@
-# Wenslauce Portfolio V5
-
+# Wenslauce 
 A modern, responsive portfolio website built with React and Supabase.
 
 ## 🚀 Tech Stack

@@ -51,7 +51,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src="/photo.png"
+                          src="/photo.png?v=2"
             alt="Wenslauce Chengo - Media Strategist and Communications Professional | Professional headshot of Wenslauce Chengo, an experienced media and communications expert specializing in digital strategy, web development, and brand management"
             title="Wenslauce Chengo | Media Strategist & Web Developer"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
@@ -195,7 +195,7 @@ const AboutPage = () => {
         description="Learn about Wenslauce Chengo, a dynamic media and communications professional with over 4 years of experience in strategic initiatives, brand management, web development, and digital innovation."
         url="https://wenslauce.com/#About"
         keywords="About Wenslauce Chengo, Media Professional, Communications Expert, Brand Strategist, Team Leadership, Digital Innovation, Web Developer, Journalism"
-        image="https://wenslauce.com/photo.png"
+                  image="https://wenslauce.com/photo.png?v=2"
       />
       
       {/* Structured Data for Person and Profile */}
@@ -208,7 +208,7 @@ const AboutPage = () => {
           "description": "Dynamic and results-driven media and communications professional with over 4 years of experience leading strategic initiatives across digital, traditional, and tech platforms.",
           "image": {
             "@type": "ImageObject",
-            "url": "https://wenslauce.com/photo.png",
+            "url": "https://wenslauce.com/photo.png?v=2",
             "width": "400",
             "height": "400",
             "caption": "Professional headshot of Wenslauce Chengo",

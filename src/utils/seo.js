@@ -350,7 +350,7 @@ export const generatePersonSchema = (personData = {}) => {
     name = "Wenslauce Chengo",
     jobTitle = "Media Strategist & Web Developer",
     description = "Dynamic and results-driven media and communications professional with over 4 years of experience",
-    imageUrl = "https://wenslauce.com/photo.png",
+    imageUrl = "https://wenslauce.com/photo.png?v=2",
     website = "https://wenslauce.com"
   } = personData;
 
