@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const SEO = ({ title, description, image, url, keywords, type = "website" }) => {
   const defaultTitle = "Wenslauce Chengo | Media Strategist";
   const defaultDescription = "Dynamic and results-driven media and communications professional with over 4 years of experience leading strategic initiatives across digital, traditional, and tech platforms. Adept at elevating brand visibility through impactful PR, data-driven content strategies, and cross-channel marketing. Proven leadership in managing multidisciplinary teams, launching scalable tech solutions, and aligning IT and media strategies with business goals. Versatile expertise in media relations, web development, social media management, and market analysis, with a strong foundation in journalism and digital innovation.";
-  const defaultImage = "https://wenslauce.com/meta.png?v=2";
+  const defaultImage = "https://wenslauce.com/Meta.png?v=2";
   const defaultUrl = "https://wenslauce.com";
   const defaultKeywords = "Wenslauce Chengo, Media Strategist, Content Creator, Digital Marketing, Social Media Management, Brand Strategy, Content Strategy, Digital Communications, Web Development";
 

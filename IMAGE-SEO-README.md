@@ -1,17 +1,17 @@
 # Image SEO Optimization Guide
 
 ## Overview
-This document outlines the comprehensive SEO optimization implemented for images in the Wenslauce Chengo portfolio website, specifically focusing on the profile picture (`/photo.png`) and meta image (`/meta.png`).
+This document outlines the comprehensive SEO optimization implemented for images in the Wenslauce Chengo portfolio website, specifically focusing on the profile picture (`/Photo.png`) and meta image (`/Meta.png`).
 
 ## Image Assets Optimized
 
-### 1. Profile Picture (`/photo.png`)
+### 1. Profile Picture (`/Photo.png`)
 **Location**: About section of the website  
 **Purpose**: Professional headshot showcasing expertise  
 **Dimensions**: 400x400px (recommended)  
 **Format**: PNG for high quality
 
-### 2. Meta Image (`/meta.png`)
+### 2. Meta Image (`/Meta.png`)
 **Location**: Used across all social media sharing  
 **Purpose**: Brand representation for social media cards  
 **Dimensions**: 1200x630px (Open Graph standard)  
@@ -19,12 +19,12 @@ This document outlines the comprehensive SEO optimization implemented for images
 
 ## SEO Optimization Implementation
 
-### Profile Picture Optimization (`/photo.png`)
+### Profile Picture Optimization (`/Photo.png`)
 
 #### Enhanced HTML Attributes
 ```html
 <img
-  src="/photo.png"
+  src="/Photo.png"
   alt="Wenslauce Chengo - Media Strategist and Communications Professional | Professional headshot of Wenslauce Chengo, an experienced media and communications expert specializing in digital strategy, web development, and brand management"
   title="Wenslauce Chengo | Media Strategist & Web Developer"
   className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
@@ -45,13 +45,13 @@ This document outlines the comprehensive SEO optimization implemented for images
 - **`role="img"`**: Accessibility enhancement
 - **`aria-label`**: Screen reader optimization
 
-### Meta Image Optimization (`/meta.png`)
+### Meta Image Optimization (`/Meta.png`)
 
 #### Enhanced Open Graph Tags
 ```html
 <!-- Open Graph / Facebook -->
-<meta property="og:image" content="https://wenslauce.com/meta.png" />
-<meta property="og:image:secure_url" content="https://wenslauce.com/meta.png" />
+<meta property="og:image" content="https://wenslauce.com/Meta.png" />
+<meta property="og:image:secure_url" content="https://wenslauce.com/Meta.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -63,7 +63,7 @@ This document outlines the comprehensive SEO optimization implemented for images
 ```html
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://wenslauce.com/meta.png" />
+<meta name="twitter:image" content="https://wenslauce.com/Meta.png" />
 <meta name="twitter:image:alt" content="Wenslauce Chengo | Media Strategist & Web Developer - Professional Portfolio and Media Strategy Services" />
 <meta name="twitter:image:width" content="1200" />
 <meta name="twitter:image:height" content="630" />
@@ -83,7 +83,7 @@ This document outlines the comprehensive SEO optimization implemented for images
   "name": "Wenslauce Chengo",
   "image": {
     "@type": "ImageObject",
-    "url": "https://wenslauce.com/photo.png",
+    "url": "https://wenslauce.com/Photo.png",
     "width": "400",
     "height": "400",
     "caption": "Professional headshot of Wenslauce Chengo",
@@ -104,7 +104,7 @@ This document outlines the comprehensive SEO optimization implemented for images
 {
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  "url": "https://wenslauce.com/meta.png",
+  "url": "https://wenslauce.com/Meta.png",
   "width": "1200",
   "height": "630",
   "caption": "Professional portfolio and media strategy services",
@@ -224,14 +224,14 @@ export const generateImageStructuredData = (imageUrl, altText) => {
 
 ## Technical Specifications
 
-### Profile Image (`/photo.png`)
+### Profile Image (`/Photo.png`)
 - **Recommended Size**: 400x400px minimum
 - **Aspect Ratio**: 1:1 (square)
 - **File Format**: PNG or high-quality JPEG
 - **File Size**: Under 100KB for optimal loading
 - **Color Profile**: sRGB for web compatibility
 
-### Meta Image (`/meta.png`)
+### Meta Image (`/Meta.png`)
 - **Required Size**: 1200x630px
 - **Aspect Ratio**: 1.91:1 (Open Graph standard)
 - **File Format**: PNG or JPEG
