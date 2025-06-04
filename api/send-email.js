@@ -136,20 +136,22 @@ export default async function handler(req, res) {
         <p style="color: #6b7280; margin: 0 0 16px; font-size: 14px;">Media Strategist</p>
         
         <!-- Contact Information -->
-        <div style="margin: 16px 0 24px;">
-          <p style="color: #374151; margin: 0 0 8px; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <span style="font-size: 16px;">🇰🇪</span>
-            <span>+254111928058</span>
-            <span style="color: #6b7280;">|</span>
-            <span style="font-size: 16px;">🇺🇸</span>
+        <div style="margin: 16px 0 24px; text-align: center;">
+          <p style="color: #374151; margin: 0; font-size: 14px; font-weight: 500;">
+            <span style="font-size: 16px; margin-right: 4px;">🇰🇪</span>
+            <span style="margin-right: 8px;">+254 111 928 058</span>
+            <span style="color: #6b7280; margin: 0 8px;">|</span>
+            <span style="font-size: 16px; margin-right: 4px;">🇺🇸</span>
             <span>+1 551 350 2338</span>
           </p>
         </div>
 
         <!-- Powered By -->
         <div style="margin: 24px 0 0; padding: 16px 0; border-top: 1px solid #f3f4f6;">
-          <p style="color: #9ca3af; margin: 0 0 8px; font-size: 12px; font-weight: 500;">Powered By</p>
-          <img src="https://www.xpertsafrica.com/logo-light.png" alt="Xperts Africa LLC" style="height: 24px; width: auto; opacity: 0.8;">
+          <p style="color: #9ca3af; margin: 0 0 12px; font-size: 12px; font-weight: 500;">Powered By</p>
+          <a href="https://www.xpertsafrica.com/" target="_blank" style="text-decoration: none; display: inline-block;">
+            <img src="https://www.xpertsafrica.com/logo-light.png" alt="Xperts Africa LLC" style="height: 32px; width: auto; opacity: 0.8; transition: opacity 0.2s ease;">
+          </a>
         </div>
       </div>
     </div>
