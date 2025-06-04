@@ -22,21 +22,6 @@
       "source": "/(.*)/",
       "destination": "/$1",
       "permanent": true
-    },
-    {
-      "source": "http://wenslauce.com/(.*)",
-      "destination": "https://wenslauce.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "http://www.wenslauce.com/(.*)",
-      "destination": "https://wenslauce.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "https://www.wenslauce.com/(.*)",
-      "destination": "https://wenslauce.com/$1",
-      "permanent": true
     }
   ],
   "headers": [
