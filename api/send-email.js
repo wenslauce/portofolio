@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     }
 
     // Email configuration
-    const FROM_EMAIL = "hello@wenslauce.com";
+    const FROM_EMAIL = "send@wenslauce.com";
     const FROM_NAME = "Wenslauce Chengo";
     const REPLY_TO_EMAIL = "hello@wenslauce.com";
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
