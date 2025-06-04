@@ -45,9 +45,7 @@ export default async function handler(req, res) {
     <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
       <!-- Header -->
       <div style="text-align: center; margin-bottom: 40px;">
-        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #6366f1, #a855f7); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-size: 24px; font-weight: bold;">W</span>
-        </div>
+        <img src="https://www.wenslauce.com/Photo.png" alt="Wenslauce Chengo" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; object-fit: cover; border: 3px solid #6366f1;">
         <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: 600;">New Contact Message</h1>
         <p style="color: #6b7280; margin: 10px 0 0; font-size: 16px;">You have received a new message through your portfolio</p>
       </div>
@@ -106,9 +104,7 @@ export default async function handler(req, res) {
     <div style="background: white; border-radius: 20px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
       <!-- Header -->
       <div style="text-align: center; margin-bottom: 40px;">
-        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #6366f1, #a855f7); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
-          <span style="color: white; font-size: 24px; font-weight: bold;">W</span>
-        </div>
+        <img src="https://www.wenslauce.com/Photo.png" alt="Wenslauce Chengo" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px; display: block; object-fit: cover; border: 3px solid #6366f1;">
         <h1 style="color: #1f2937; margin: 0; font-size: 28px; font-weight: 600;">Thank You, ${name}!</h1>
         <p style="color: #6b7280; margin: 10px 0 0; font-size: 16px;">Your message has been received successfully</p>
       </div>
@@ -128,8 +124,8 @@ export default async function handler(req, res) {
       <div style="background: #f8fafc; border-radius: 12px; padding: 24px; margin-bottom: 32px;">
         <h3 style="color: #374151; margin: 0 0 16px; font-size: 18px; font-weight: 600; text-align: center;">Explore My Work</h3>
         <div style="text-align: center;">
-          <a href="https://wenslauce.com/projects" style="display: inline-block; margin: 0 8px 8px; padding: 8px 16px; background: #6366f1; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500;">View Projects</a>
-          <a href="https://wenslauce.com/certificates" style="display: inline-block; margin: 0 8px 8px; padding: 8px 16px; background: #a855f7; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500;">My Certificates</a>
+          <a href="https://www.wenslauce.com/#Portofolio" style="display: inline-block; margin: 0 8px 8px; padding: 8px 16px; background: #6366f1; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500;">View Projects</a>
+          <a href="https://wenslauce.com/" style="display: inline-block; margin: 0 8px 8px; padding: 8px 16px; background: #a855f7; color: white; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500;">My Certificates</a>
         </div>
       </div>
 
@@ -137,7 +133,24 @@ export default async function handler(req, res) {
       <div style="text-align: center; padding-top: 24px; border-top: 1px solid #e5e7eb;">
         <p style="color: #374151; margin: 0 0 8px; font-size: 16px; font-weight: 600;">Best regards,</p>
         <p style="color: #6366f1; margin: 0 0 4px; font-size: 18px; font-weight: 700;">Wenslauce Chengo</p>
-        <p style="color: #6b7280; margin: 0 0 16px; font-size: 14px;">Media Specialist & Digital Innovator</p>
+        <p style="color: #6b7280; margin: 0 0 16px; font-size: 14px;">Media Strategist</p>
+        
+        <!-- Contact Information -->
+        <div style="margin: 16px 0 24px;">
+          <p style="color: #374151; margin: 0 0 8px; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 16px;">🇰🇪</span>
+            <span>+254111928058</span>
+            <span style="color: #6b7280;">|</span>
+            <span style="font-size: 16px;">🇺🇸</span>
+            <span>+1 551 350 2338</span>
+          </p>
+        </div>
+
+        <!-- Powered By -->
+        <div style="margin: 24px 0 0; padding: 16px 0; border-top: 1px solid #f3f4f6;">
+          <p style="color: #9ca3af; margin: 0 0 8px; font-size: 12px; font-weight: 500;">Powered By</p>
+          <img src="https://www.xpertsafrica.com/logo-light.png" alt="Xperts Africa LLC" style="height: 24px; width: auto; opacity: 0.8;">
+        </div>
       </div>
     </div>
   </div>
