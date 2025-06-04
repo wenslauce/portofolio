@@ -93,8 +93,10 @@ In the client confirmation template, update these URLs:
 
 ### Update Contact Information:
 ```typescript
-from: "hello@wenslauce.com"  // Your verified email
-to: "hello@wenslauce.com"    // Where you receive notifications
+FROM_EMAIL = "onboarding@resend.dev" // Current (works immediately)
+// Change to "hello@wenslauce.com" after domain verification
+FROM_NAME = "Wenslauce Chengo"
+REPLY_TO_EMAIL = "hello@wenslauce.com" // Where replies go
 ```
 
 ## 🧪 Testing Your Setup

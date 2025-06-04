@@ -1,5 +1,4 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { Resend } from "npm:resend";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -12,7 +11,38 @@ if (!resendApiKey) {
   throw new Error("RESEND_API_KEY environment variable is required");
 }
 
-const resend = new Resend(resendApiKey);
+// Resend API configuration
+const RESEND_API_URL = 'https://api.resend.com/emails';
+
+// Email configuration - using verified domain
+const FROM_EMAIL = "hello@wenslauce.com"; // Verified domain
+const FROM_NAME = "Wenslauce Chengo";
+const REPLY_TO_EMAIL = "hello@wenslauce.com"; // Your actual email for replies
+
+// Function to send email via Resend API
+async function sendEmailViaResend(emailData: {
+  from: string;
+  to: string;
+  subject: string;
+  html: string;
+  reply_to?: string;
+}) {
+  const response = await fetch(RESEND_API_URL, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${resendApiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(emailData),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.text();
+    throw new Error(`Resend API error: ${response.status} - ${errorData}`);
+  }
+
+  return await response.json();
+}
 
 // Email templates
 const getAdminNotificationTemplate = (name: string, email: string, message: string) => `
@@ -178,21 +208,23 @@ serve(async (req) => {
     console.log('Sending emails for:', { name, email });
 
     // Send notification email to admin
-    const adminEmailResponse = await resend.emails.send({
-      from: "hello@wenslauce.com",
-      to: "hello@wenslauce.com",
+    const adminEmailResponse = await sendEmailViaResend({
+      from: `${FROM_NAME} <${FROM_EMAIL}>`,
+      to: REPLY_TO_EMAIL,
       subject: `New Message from ${name}`,
-      html: getAdminNotificationTemplate(name, email, message)
+      html: getAdminNotificationTemplate(name, email, message),
+      reply_to: email
     });
 
     console.log('Admin email sent:', adminEmailResponse);
 
     // Send confirmation email to client
-    const clientEmailResponse = await resend.emails.send({
-      from: "hello@wenslauce.com",
+    const clientEmailResponse = await sendEmailViaResend({
+      from: `${FROM_NAME} <${FROM_EMAIL}>`,
       to: email,
       subject: "Thank you for your message - I'll be in touch soon!",
-      html: getClientConfirmationTemplate(name)
+      html: getClientConfirmationTemplate(name),
+      reply_to: REPLY_TO_EMAIL
     });
 
     console.log('Client confirmation email sent:', clientEmailResponse);
