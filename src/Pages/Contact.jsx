@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { supabase } from "../lib/supabase";
 import SEO from '../components/SEO';
+import EmailPreview from '../components/EmailPreview';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -81,14 +82,22 @@ const ContactPage = () => {
       html: `
         <div class="success-content">
           <div class="success-text">
-            Thank you for reaching out! I'll get back to you soon.
+            Thank you for reaching out! I'll get back to you within 24-48 hours.
+          </div>
+          <div style="margin-top: 16px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; border-left: 3px solid #10b981;">
+            <div style="color: #10b981; font-size: 14px; font-weight: 500;">
+              📧 Confirmation email sent to your inbox
+            </div>
+            <div style="color: #6b7280; font-size: 12px; margin-top: 4px;">
+              Check your email for a confirmation message with next steps
+            </div>
           </div>
         </div>
       `,
       icon: 'success',
       showConfirmButton: true,
-      confirmButtonText: 'Great!',
-      timer: 3000,
+      confirmButtonText: 'Awesome!',
+      timer: 5000,
       timerProgressBar: true,
       customClass: {
         popup: 'glass-modal',
@@ -272,6 +281,8 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
+      
+      <EmailPreview />
     </>
   );
 };
