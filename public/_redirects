@@ -1,0 +1,12 @@
+# Netlify redirects for SPA routing
+/*    /index.html   200
+
+# Force HTTPS
+http://wenslauce.com/*    https://wenslauce.com/:splat    301!
+http://www.wenslauce.com/*    https://wenslauce.com/:splat    301!
+
+# Redirect www to non-www (canonical URL)
+https://www.wenslauce.com/*    https://wenslauce.com/:splat    301!
+
+# Remove trailing slashes
+/*/    /:splat    301! 
