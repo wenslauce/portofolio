@@ -18,7 +18,7 @@ Contact Form → Supabase → Edge Function → Resend API → Email Delivery
 
 ### Now (Independent Service):
 ```
-Contact Form → Direct Resend API → Email Delivery
+Contact Form → Vercel API Route → Resend API → Email Delivery
 ```
 
 ## ⚙️ Setup Instructions
@@ -31,11 +31,11 @@ Create a `.env` file in your project root:
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-# Independent Email Service
-VITE_RESEND_API_KEY=re_your_resend_api_key_here
+# Vercel API Route (for email service)
+RESEND_API_KEY=re_your_resend_api_key_here
 ```
 
-**Important**: Only `VITE_` prefixed variables work in frontend Vite applications.
+**Important**: `RESEND_API_KEY` (without VITE_) is used by the Vercel API route for security.
 
 ### 2. Get Your Resend API Key
 
@@ -61,7 +61,7 @@ Reply-To: hello@wenslauce.com
 # Set environment variables
 vercel env add VITE_SUPABASE_URL
 vercel env add VITE_SUPABASE_ANON_KEY  
-vercel env add VITE_RESEND_API_KEY
+vercel env add RESEND_API_KEY
 
 # Deploy
 vercel --prod
