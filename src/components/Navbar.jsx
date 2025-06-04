@@ -7,10 +7,27 @@ const Navbar = () => {
     const [activeSection, setActiveSection] = useState("Home");
     
     const navItems = [
-        { href: "#Home", label: "Home" },
-        { href: "#About", label: "About" },
-        { href: "#Portofolio", label: "Portofolio" },
-        { href: "#Contact", label: "Contact" },
+        { href: "#Home", label: "Home", type: "internal" },
+        { href: "#About", label: "About", type: "internal" },
+        { href: "#Portofolio", label: "Portofolio", type: "internal" },
+        { href: "#Contact", label: "Contact", type: "internal" },
+    ];
+
+    const externalNavItems = [
+        { 
+            href: "https://www.xpertsafrica.com/hosting", 
+            label: "Hosting", 
+            type: "external",
+            title: "Reliable Web Hosting Solutions by Xperts Africa",
+            description: "Fast, secure hosting with 99.9% uptime guarantee"
+        },
+        { 
+            href: "https://www.xpertsafrica.com/domains", 
+            label: "Domains", 
+            type: "external",
+            title: "Domain Registration and Management by Xperts Africa",
+            description: "Search, register and manage domains with ease"
+        },
     ];
 
     useEffect(() => {
@@ -91,6 +108,7 @@ const Navbar = () => {
                 {/* Desktop Navigation */}
                 <div className="hidden md:block">
                     <div className="ml-8 flex items-center space-x-8">
+                        {/* Internal Links */}
                         {navItems.map((item) => (
                             <a
                                 key={item.label}
@@ -114,6 +132,25 @@ const Navbar = () => {
                                             : "scale-x-0 group-hover:scale-x-100"
                                     }`}
                                 />
+                            </a>
+                        ))}
+                        
+                        {/* External Links */}
+                        {externalNavItems.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer sponsored"
+                                title={item.title}
+                                aria-label={`${item.label} - ${item.description}`}
+                                className="group relative px-1 py-2 text-sm font-medium"
+                            >
+                                <span className="relative z-10 transition-colors duration-300 text-[#e2d3fd] group-hover:text-white">
+                                    {item.label}
+                                    <span className="ml-1 text-xs opacity-60">↗</span>
+                                </span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#6366f1] to-[#a855f7] transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100" />
                             </a>
                         ))}
                     </div>
@@ -148,6 +185,7 @@ const Navbar = () => {
         >
             <div className="flex flex-col h-full">
                 <div className="px-4 py-6 space-y-4 flex-1 ">
+                    {/* Internal Links */}
                     {navItems.map((item, index) => (
                         <a
                             key={item.label}
@@ -165,6 +203,30 @@ const Navbar = () => {
                             }}
                         >
                             {item.label}
+                        </a>
+                    ))}
+                    
+                    {/* External Links */}
+                    {externalNavItems.map((item, index) => (
+                        <a
+                            key={item.label}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            title={item.title}
+                            aria-label={`${item.label} - ${item.description}`}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-3 text-lg font-medium transition-all duration-300 ease text-[#e2d3fd] hover:text-white"
+                            style={{
+                                transitionDelay: `${(navItems.length + index) * 100}ms`,
+                                transform: isOpen ? "translateX(0)" : "translateX(50px)",
+                                opacity: isOpen ? 1 : 0,
+                            }}
+                        >
+                            <span className="flex items-center justify-between">
+                                {item.label}
+                                <span className="text-sm opacity-60">↗</span>
+                            </span>
                         </a>
                     ))}
                 </div>

@@ -45,6 +45,23 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                 </a>
                 . All Rights Reserved.
               </span>
+              
+              {/* Powered By Xperts Africa */}
+              <div className="mt-4 pb-4 border-t border-gray-600/30 pt-4">
+                <p className="text-xs text-gray-300 mb-3 font-medium">Powered By</p>
+                <a 
+                  href="https://www.xpertsafrica.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block transition-all duration-300 hover:scale-105 hover:opacity-90 cursor-pointer"
+                >
+                  <img 
+                    src="/xperts.png" 
+                    alt="Xperts Africa LLC" 
+                    className="h-8 w-auto mx-auto opacity-90 filter brightness-110"
+                  />
+                </a>
+              </div>
             </center>
           </footer>
         </>
@@ -66,6 +83,23 @@ const ProjectPageLayout = () => (
           </a>
           . All Rights Reserved.
         </span>
+        
+        {/* Powered By Xperts Africa */}
+        <div className="mt-4 pb-4 border-t border-gray-600/30 pt-4">
+          <p className="text-xs text-gray-300 mb-3 font-medium">Powered By</p>
+          <a 
+            href="https://www.xpertsafrica.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block transition-all duration-300 hover:scale-105 hover:opacity-90 cursor-pointer"
+          >
+            <img 
+              src="/xperts.png" 
+              alt="Xperts Africa LLC" 
+              className="h-8 w-auto mx-auto opacity-90 filter brightness-110"
+            />
+          </a>
+        </div>
       </center>
     </footer>
   </>
@@ -84,6 +118,23 @@ const CertificatePageLayout = () => (
           </a>
           . All Rights Reserved.
         </span>
+        
+        {/* Powered By Xperts Africa */}
+        <div className="mt-4 pb-4 border-t border-gray-600/30 pt-4">
+          <p className="text-xs text-gray-300 mb-3 font-medium">Powered By</p>
+          <a 
+            href="https://www.xpertsafrica.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block transition-all duration-300 hover:scale-105 hover:opacity-90 cursor-pointer"
+          >
+            <img 
+              src="/xperts.png" 
+              alt="Xperts Africa LLC" 
+              className="h-8 w-auto mx-auto opacity-90 filter brightness-110"
+            />
+          </a>
+        </div>
       </center>
     </footer>
   </>
