@@ -7,8 +7,8 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { supabase } from "../lib/supabase";
+import { sendContactEmails } from "../lib/emailService";
 import SEO from '../components/SEO';
-import EmailPreview from '../components/EmailPreview';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const ContactPage = () => {
     showLoadingMessage();
 
     try {
-      // First, store in Supabase
+      // Store in Supabase database for record keeping
       const { error: dbError } = await supabase
         .from('contact_messages')
         .insert([
@@ -49,18 +49,19 @@ const ContactPage = () => {
           }
         ]);
 
-      if (dbError) throw dbError;
+      if (dbError) {
+        console.warn('Database storage failed:', dbError);
+        // Continue with email sending even if database fails
+      }
 
-      // Then, send email via Edge Function
-      const { data, error: emailError } = await supabase.functions.invoke('sendEmail', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        }
-      });
+      // Send emails via independent Resend API service
+      const emailResult = await sendContactEmails(
+        formData.name,
+        formData.email,
+        formData.message
+      );
 
-      if (emailError) throw emailError;
+      console.log('Email service result:', emailResult);
 
       showSuccessMessage();
       setFormData({
@@ -69,7 +70,7 @@ const ContactPage = () => {
         message: "",
       });
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error processing contact form:', error);
       showErrorMessage(error);
     } finally {
       setIsSubmitting(false);
@@ -281,8 +282,6 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      
-      <EmailPreview />
     </>
   );
 };

@@ -13,9 +13,8 @@ A modern, responsive portfolio website built with React and Supabase.
   - SweetAlert2
 
 - **Backend:**
-  - Supabase
-  - Edge Functions
-  - Resend (Email Service)
+  - Supabase (Comments & Database)
+  - Resend API (Independent Email Service)
 
 ## 🛠️ Installation
 
@@ -37,6 +36,7 @@ A modern, responsive portfolio website built with React and Supabase.
    ```env
    VITE_SUPABASE_URL=your_supabase_url
    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   VITE_RESEND_API_KEY=your_resend_api_key
    ```
 
 4. **Start development server:**
@@ -77,21 +77,18 @@ The build files will be in the `dist` directory.
    with check (true);
    ```
 
-3. **Deploy Edge Functions:**
-   ```bash
-   supabase functions deploy sendEmail
-   ```
-
-4. **Set up Email Service:**
+3. **Set up Independent Email Service:**
    - Create a [Resend](https://resend.com) account
+   - Get your API key from Resend dashboard
    - Add your domain or use the test domain
-   - Update the Edge Function with your API key
+   - Add `VITE_RESEND_API_KEY` to your environment variables
 
 ## 📝 Features
 
 - Responsive Design
 - Dark Theme
-- Contact Form with Email Notifications
+- Independent Contact Form with Professional Email Notifications
+- Real-time Comments System
 - Smooth Animations
 - SEO Optimized
 - Modern UI/UX
